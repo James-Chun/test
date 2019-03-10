@@ -18,27 +18,30 @@ public static int partition ( int[] data, int start, int end){
 
     int pivot = Math.abs(rand.nextInt() % data.length ) ; //making seed from that randgen
 
-    start++;
-    int temp = data[start-1];
-    data[start-1]=data[pivot];
-    data[pivot]=temp;
-    pivot = start -1;
+    int temp = 0;
+    if (start!=end){
+        start++;
+        temp = data[start-1];
+        data[start-1]=data[pivot];
+        data[pivot]=temp;
+        pivot = start -1;
+    }
 
     while (start != end){
-      //System.out.println(start);
-      //System.out.println(end);
-      //System.out.println(visual(data));
+        //System.out.println(start);
+        //System.out.println(end);
+        //System.out.println(visual(data));
 
-            if ( data[start] > data[pivot] ){
-                temp = data[start];
-                data[start] = data[end];
-                data[end] = temp;
-                end--;
-            }
+        if ( data[start] > data[pivot] ){
+            temp = data[start];
+            data[start] = data[end];
+            data[end] = temp;
+            end--;
+        }
 
-            else if ( data[start] < data[pivot] ){
-              start++;
-            }
+        else if ( data[start] < data[pivot] ){
+            start++;
+        }
 
     }
 
@@ -46,7 +49,8 @@ public static int partition ( int[] data, int start, int end){
     //System.out.println(end);
     //System.out.println(visual(data));
 
-    if (data[start] > data[pivot]){
+
+    if ( start != 0 && data[start] > data[pivot]){
         temp = data[start-1];
         data[start-1]=data[pivot];
         data[pivot]=temp;
