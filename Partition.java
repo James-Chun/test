@@ -25,9 +25,9 @@ public static int partition ( int[] data, int start, int end){
     pivot = start -1;
 
     while (start != end){
-      System.out.println(start);
-      System.out.println(end);
-      System.out.println(visual(data));
+      //System.out.println(start);
+      //System.out.println(end);
+      //System.out.println(visual(data));
 
             if ( data[start] > data[pivot] ){
                 temp = data[start];
@@ -50,14 +50,14 @@ public static int partition ( int[] data, int start, int end){
         temp = data[start-1];
         data[start-1]=data[pivot];
         data[pivot]=temp;
-        System.out.println(visual(data));
+        //System.out.println(visual(data));
         return start-1;
     }
 
     temp = data[start];
     data[start]=data[pivot];
     data[pivot]=temp;
-    System.out.println(visual(data));
+    //System.out.println(visual(data));
 
     return start;
 }
